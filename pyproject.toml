@@ -8,6 +8,7 @@ build-backend = "flit_core.buildapi"
 name = "PyUI3"
 authors = [{name = "Johnny Konczal", email = "johndrostan@outlook.com"}]
 dynamic = ["version", "description"]
+readme = "README.md"
 dependencies = [
     "win32more",
     "tk"
