@@ -70,3 +70,4 @@ from win32more.Microsoft.UI.Xaml.Controls import (
     WebView
 )
 from win32more.Microsoft.UI.Xaml import Window
+from win32more.xaml import XamlApplication
