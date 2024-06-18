@@ -1,7 +1,7 @@
 """
 WinUI3 with Python!
 """
-__version__ = "2.0.0"
+__version__ = "3.0.0"
 description = "WinUI3 with Python!"
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon,
