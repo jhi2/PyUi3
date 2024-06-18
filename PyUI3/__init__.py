@@ -75,21 +75,16 @@ from win32more.Microsoft.UI.Xaml.Controls import (
 )
 from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
-import subprocess
-import tkinter
-from tkinter import ttk
 class Application(XamlApplication):
     def __init__(self,**kwrgs):
-        loader = tkinter.Tk()
-        loader.attributes("-topmost",True)
-        loader.attributes("-toolwindow",True)
-        ad = tkinter.Label(loader,text="Powerd by PyUi3",font=("Segoe UI",10))
-        ad.pack()
-        bar = ttk.Progressbar(loader,orient="horizontal",mode="indeterminate")
-        bar.pack()
-        bar.start()
-        subprocess.Popen("TIMEOUT /T 5 /NOBREAK")
-        bar.stop()
-        loader.destroy()
         super().__init__(**kwrgs)
-
+class Window(Window):
+    def __init__(self,**kwrgs):
+        super().__init__(**kwrgs)
+        self.roster = []
+    def add(self,widget):
+        self.roster.append(widget)
+    def applyWidgets(self):
+        for widget in self.roster:
+            self.Content = widget
+    
