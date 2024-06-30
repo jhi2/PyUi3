@@ -75,16 +75,8 @@ from win32more.Microsoft.UI.Xaml.Controls import (
 )
 from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
-class Application(XamlApplication):
-    def __init__(self,**kwrgs):
-        super().__init__(**kwrgs)
-class Window(Window):
-    def __init__(self,**kwrgs):
-        super().__init__(**kwrgs)
-        self.roster = []
-    def add(self,widget):
-        self.roster.append(widget)
-    def applyWidgets(self):
-        for widget in self.roster:
-            self.Content = widget
-    
+class ApplicationWindow(self):
+    def __init__(self):
+        class app(XamlApplication):
+            def OnLaunched(self):
+                
