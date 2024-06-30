@@ -1,8 +1,7 @@
 """
 WinUI3 with Python!
 """
-__version__ = "3.0.0"
-description = "WinUI3 with Python!"
+__version__ = "4.0.0"
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon,
     AutoSuggestBox,
@@ -77,6 +76,8 @@ from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
 class ApplicationWindow(self):
     def __init__(self):
+        global win
         class app(XamlApplication):
             def OnLaunched(self):
-                
+                win = Window()
+
