@@ -74,15 +74,22 @@ from win32more.Microsoft.UI.Xaml.Controls import (
 )
 from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
+from win32more.Microsoft.UI.Xaml.Media import MicaBackdrop
 class ApplicationWindow(self):
     def __init__(self,appargs):
-        global win
+        self.roster = []
         class app(XamlApplication):
             def __init__(self):
                 super().__init__(appargs)
             def OnLaunched(self):
-                win = Window()
-                win.Activate()
-        application = app()
-        application.Start()
+                self.win = Window()
+                self.win.Activate()
+        self.application = app()
+    def add(self, item):
+        self.roster.append(item)
+    def run(self):
+        for item in self.roster:
+            self.win.content = item
+        self.win.SystemBackdrop = MicaBackdrop()
+        self.application.Start()
 
