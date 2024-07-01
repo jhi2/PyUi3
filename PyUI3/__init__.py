@@ -75,9 +75,14 @@ from win32more.Microsoft.UI.Xaml.Controls import (
 from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
 class ApplicationWindow(self):
-    def __init__(self):
+    def __init__(self,appargs):
         global win
         class app(XamlApplication):
+            def __init__(self):
+                super().__init__(appargs)
             def OnLaunched(self):
                 win = Window()
+                win.Activate()
+        application = app()
+        application.Start()
 
