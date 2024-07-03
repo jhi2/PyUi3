@@ -1,7 +1,7 @@
 """
 WinUI3 with Python!
 """
-__version__ = "4.0.0"
+__version__ = "4.0.1"
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon,
     AutoSuggestBox,
