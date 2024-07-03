@@ -83,13 +83,12 @@ class ApplicationWindow(self):
                 super().__init__(appargs)
             def OnLaunched(self):
                 self.win = Window()
-                self.win.Activate()
         self.application = app()
     def add(self, item):
         self.roster.append(item)
     def run(self):
+        self.application.Start()
         for item in self.roster:
             self.win.content = item
-        self.win.SystemBackdrop = MicaBackdrop()
-        self.application.Start()
+        self.win.Activate()
 
