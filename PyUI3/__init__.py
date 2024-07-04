@@ -76,7 +76,7 @@ from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
 from win32more.Microsoft.UI.Xaml.Media import MicaBackdrop
 class ApplicationWindow():
-    def __init__(self,appargs,winargs):
+    def __init__(self):
         self.roster = []
         class app(XamlApplication):
             def __init__(self):
