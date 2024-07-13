@@ -2,7 +2,7 @@
 WinUI3 with Python!
 """
 
-__version__ = "5.0.0"
+__version__ = "5.0.1"
 #The never-ending list of imports HAHA
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon,
