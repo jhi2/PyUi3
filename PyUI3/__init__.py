@@ -2,8 +2,9 @@
 WinUI3 with Python!
 """
 
-__version__ = "5.2.0"
+__version__ = "5.3.0"
 
+import pythoncom
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon, AutoSuggestBox, BreadcrumbBar, Button, CalendarDatePicker,
     CalendarView, CheckBox, ColorPicker, ComboBox, CommandBar, CommandBarFlyout,
@@ -21,17 +22,26 @@ from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
 from win32more.Microsoft.UI.Xaml.Media import MicaBackdrop
 
+class App(XamlApplication):
+    def __init__(self):
+        pythoncom.CoInitialize()
+        super().__init__()
+        self.win = None
+
+    def OnLaunched(self, args):
+        self.win = Window()
+
 class ApplicationWindow:
     def __init__(self):
         self.roster = []
         self.app = App()
+        self.app.Start()
         self.win = self.app.win
 
     def add(self, item):
         self.roster.append(item)
 
     def run(self):
-        self.app.Start()
         for item in self.roster:
             self.win.Content = item
         self.win.Activate()
@@ -44,10 +54,3 @@ class ApplicationWindow:
             self.win.SystemBackdrop = MicaBackdrop()
         else:
             self.win.SystemBackdrop = None
-
-class App(XamlApplication):
-    def __init__(self):
-        super().__init__()
-
-    def OnLaunched(self, args):
-        self.win = Window()
