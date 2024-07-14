@@ -2,7 +2,7 @@
 WinUI3 with Python!
 """
 
-__version__ = "5.0.1"
+__version__ = "5.2.0"
 
 from win32more.Microsoft.UI.Xaml.Controls import (
     AnimatedIcon, AutoSuggestBox, BreadcrumbBar, Button, CalendarDatePicker,
