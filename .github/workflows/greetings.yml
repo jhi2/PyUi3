@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: windows-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Hi! welcome to the codebase for PyUI3. We will look over your concern or bug in a few weeks an respond with coments, releases, or PRs."
+        pr-message: "Hi! welcome to the codebase for PyUI3. We look forward to you helping us create a stable GUI toolkit!"
