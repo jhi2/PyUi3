@@ -35,7 +35,6 @@ class ApplicationWindow:
     def __init__(self):
         self.roster = []
         self.app = App()
-        self.app.Start()
         self.win = self.app.win
 
     def add(self, item):
@@ -44,6 +43,7 @@ class ApplicationWindow:
     def run(self):
         for item in self.roster:
             self.win.Content = item
+        XamlApplication.Start(self.app)
         self.win.Activate()
 
     def set_title(self, title):
