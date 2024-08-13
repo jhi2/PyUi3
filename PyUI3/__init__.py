@@ -41,9 +41,9 @@ class ApplicationWindow:
         self.roster.append(item)
 
     def run(self):
+        XamlApplication.Start(self.app)
         for item in self.roster:
             self.win.Content = item
-        XamlApplication.Start(self.app)
         self.win.Activate()
 
     def set_title(self, title):
