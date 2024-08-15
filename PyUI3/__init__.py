@@ -2,7 +2,7 @@
 WinUI3 with Python!
 """
 
-__version__ = "5.3.0"
+__version__ = "5.4.0"
 
 import pythoncom
 from win32more.Microsoft.UI.Xaml.Controls import (
