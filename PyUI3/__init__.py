@@ -22,6 +22,7 @@ from win32more.Microsoft.UI.Xaml import Window
 from win32more.xaml import XamlApplication
 from win32more.Microsoft.UI.Xaml.Media import MicaBackdrop
 
+
 class App(XamlApplication):
     def __init__(self):
         pythoncom.CoInitialize()
@@ -30,6 +31,7 @@ class App(XamlApplication):
 
     def OnLaunched(self, args):
         self.win = Window()
+
 
 class ApplicationWindow:
     def __init__(self):
